@@ -12,7 +12,7 @@
 (() => {
 
   // timers
-  let intervalRunner = 1000
+  let intervalRunner = 500
 
   // Simulate keyboard keydown
   let keyPresser = {}
@@ -124,8 +124,8 @@
         // cell.style.background = 'red'
         cell.parentNode.click()
 
-        document.getElementById('refreshlink').click()
-        location.reload()
+        // document.getElementById('refreshlink').click()
+        // location.reload()
 
         clearInterval(runner)
 
