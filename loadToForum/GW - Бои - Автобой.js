@@ -6,6 +6,7 @@
 // @author       Антисофт
 // @match        https://www.gwars.ru/b0/b.php*
 // @match        http://www.gwars.ru/b0/b.php*
+// @match        https://www.gwars.ru/b0/btl.php*
 // @grant        none
 // ==/UserScript==
 (() => {
