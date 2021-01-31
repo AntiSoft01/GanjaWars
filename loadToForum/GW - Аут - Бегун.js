@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         GW - Аут - Бегун
 // @namespace    http://tampermonkey.net/
-// @version      0.2.1
+// @version      0.2.1.3
 // @description  Бегает по ауту и залетает в заявки
 // @author       You
 // @match        https://www.gwars.ru/walk*
@@ -125,7 +125,7 @@
         cell.parentNode.click()
 
         // document.getElementById('refreshlink').click()
-        // location.reload()
+        setTimeout(()=>{location.reload()},1e3)
 
         clearInterval(runner)
 
