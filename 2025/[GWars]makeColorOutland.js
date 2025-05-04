@@ -6,10 +6,15 @@
 // @author Mr.Bonanno
 // @match https://www.gwars.io/walk*
 // @icon https://www.google.com/s2/favicons?domain=gwars.io
+
+// @require https://raw.githubusercontent.com/AntiSoft01/GanjaWars/refs/heads/main/2025/functions.js
+
 // @grant none
 // ==/UserScript==
 ;(() => {
     'use strict'
+
+    utils.sayHello('Bonano')
 
     //=====================================Настройки======================================//
     //в фигурные скобки через запятую можно добавлять любые css-свойства в неограниченном колличестве для изменения элемента.
