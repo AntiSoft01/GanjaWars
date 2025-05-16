@@ -2,6 +2,7 @@
 // @name         [GWars]streetWar
 // @namespace    http://tampermonkey.net/
 // @version      2.1
+// @author       Антисофт
 // @description  Анализ хп и наличие кнопки "Создать заявку"
 // @match        https://www.gwars.io/wargroup.php?war=street*
 // @grant        none
