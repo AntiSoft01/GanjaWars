@@ -1,9 +1,9 @@
 // ==UserScript==
-// @name         [GWars] Navigator Countdown
+// @name         [GWars] Navigator Countdown + Progress Bar
 // @namespace    http://tampermonkey.net/
-// @version      1.1.0
-// @description  Расширенная информация по навигатору с цветовой индикацией и таймером
-// @author       Mr.Bonanno
+// @version      1.2.0
+// @description  Навигатор с цветами, таймером и визуальной шкалой прогресса
+// @author       Mr.Bonanno (после дополнен и переписан Антисофт)
 // @match        https://www.gwars.io/me.php
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=gwars.io
 // @grant        none
@@ -39,7 +39,29 @@
         return num < 10 ? `0${num}` : num
     }
 
-    // Генерирует ХТМЛ информацию о состоянии навигатора
+    // Создает ХТМЛ шкалы прогресса (10 делений)
+    function buildProgressBar(current, max) {
+        const totalSegments = 10
+        const filledSegments = Math.floor((current / max) * totalSegments)
+
+        const segments = Array.from({ length: totalSegments }, (_, i) => {
+            const filled = i < filledSegments
+            return `<div style="
+                flex: 1;
+                height: 6px;
+                margin: 0 1px;
+                background-color: ${filled ? '#66cc66' : '#cccccc'};
+                border-radius: 2px;"></div>`
+        })
+
+        return `<div style="
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 5px;">${segments.join('')}</div>`
+    }
+
+    // Генерирует ХТМЛ информацию по навигатору
     function buildNavigatorDisplay({ currentValue, maxValue, timePerPointMs }) {
         const percent = (currentValue * 100) / maxValue
         const remainingTimeMs = (maxValue - currentValue) * timePerPointMs
@@ -60,17 +82,17 @@
         }">${percent.toFixed(1)}%</b>`
 
         return `
-            <span>
+            <div>
                 <b>Заряд навигатора:</b> ${currentValueHtml}/${maxValue} (${percentHtml}) |
                 <b>Время зарядки:</b> ${formattedDiff} (${hours}:${minutes})
-            </span>
+                ${buildProgressBar(currentValue, maxValue)}
+            </div>
         `
     }
 
     // Обновляет значение по таймеру восстановления
     function startNavigatorTimer(container, navStats) {
         let currentValue = navStats.currentValue
-
         container.innerHTML = buildNavigatorDisplay(navStats)
 
         const timer = setInterval(() => {
