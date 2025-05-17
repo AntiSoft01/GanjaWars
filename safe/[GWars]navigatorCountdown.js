@@ -12,6 +12,8 @@
 ;(function () {
     const NAV_RECOVERY_MINUTES = 420
     const COLOR_GREY = '#AAAAAA'
+    const COLOR_LIGHT_GREY = '#CCCCCC'
+    const COLOR_LIGHT_GREEN = '#66CC66'
     const COLOR_RED = '#990000'
 
     // ДОМ элемент со значениями навигатора
@@ -50,7 +52,9 @@
                 flex: 1;
                 height: 6px;
                 margin: 0 1px;
-                background-color: ${filled ? '#66cc66' : '#cccccc'};
+                background-color: ${
+                    filled ? COLOR_LIGHT_GREEN : COLOR_LIGHT_GREY
+                };
                 border-radius: 2px;"></div>`
         })
 
