@@ -12,7 +12,7 @@
 ;(function () {
     const NAV_RECOVERY_MINUTES = 420
     const COLOR_GREY = '#AAAAAA'
-    const COLOR_LIGHT_GREY = '#CCCCCC'
+    const COLOR_LIGHT_GREY = '#696156'
     const COLOR_LIGHT_GREEN = '#66CC66'
     const COLOR_RED = '#990000'
 
@@ -122,7 +122,7 @@
         Object.assign(navigatorDiv.style, {
             margin: '15px -5px -5px',
             padding: '6px 0',
-            backgroundColor: '#d0eed0',
+            backgroundColor: '#e0ffe0',
             textAlign: 'center',
             fontWeight: 'normal',
             color: '#336633',
