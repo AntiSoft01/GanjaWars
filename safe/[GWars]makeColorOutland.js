@@ -14,8 +14,6 @@
 ;(() => {
     'use strict'
 
-    utils.sayHello('Bonano')
-
     //=====================================Настройки======================================//
     //в фигурные скобки через запятую можно добавлять любые css-свойства в неограниченном колличестве для изменения элемента.
     //Находите в гугле интересующее свойство, убираете в названии свойства дефис(если имя свойства состоит из нескольких слов), а каждое следуещее слово пишите с большой буквы.
@@ -71,7 +69,7 @@
         },
         loot: {
             default: {
-                backgroundColor: '#BDB76B',
+                backgroundColor: 'yellow',
                 border: '0.1px solid #008000',
                 boxSizing: 'border-box',
             },
@@ -88,7 +86,7 @@
                 border: 'none',
             },
             Сейф: {
-                backgroundColor: 'purple',
+                backgroundColor: '#fc03e8', // pink
             },
             'Родниковая вода': {},
             Гриб: {},
@@ -194,6 +192,7 @@
         'https://images.gwars.io/q-bn/tbelt.gif': 'Титановый пояс',
         'https://images.gwars.io/q-bn/helmet2.gif': 'Шлем 2кл',
         'https://images.gwars.io/q-bn/cash.gif': 'Сейф',
+        'https://images.gwars.io/q-new/koulson_case.gif': 'Кейс Коулсона',
     }
 
     const makeColorOutland = () => {
